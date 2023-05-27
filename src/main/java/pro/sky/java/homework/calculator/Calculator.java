@@ -1,11 +1,10 @@
 package pro.sky.java.homework.calculator;
 
 public interface Calculator {
-    int sum(int a, int b);
-    int min(int a, int b);
-    int mul(int a,int b);
-    int div(int a, int b);
-    boolean checkDivByZero(int b);
+    double sum(double a, double b);
+    double min(double a, double b);
+    double mul(double a,double b);
+    double div(double a, double b);
 
 
 

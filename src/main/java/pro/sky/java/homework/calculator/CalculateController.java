@@ -21,26 +21,26 @@ public class CalculateController {
 
     @GetMapping("/calculator/plus")
     public String sum(@RequestParam int num1, @RequestParam int num2){
-        return Integer.toString(calculator.sum(num1,num2));
+        return num1 + " + " + num2 + " = " + calculator.sum(num1,num2);
     }
 
     @GetMapping("/calculator/minus")
     public String minus(@RequestParam int num1, @RequestParam int num2){
-        return Integer.toString(calculator.min(num1,num2));
+        return num1 + " - " + num2 + " = " + calculator.min(num1,num2);
     }
 
     @GetMapping("/calculator/multiply")
     public String mul(@RequestParam int num1, @RequestParam int num2){
-        return Integer.toString(calculator.mul(num1,num2));
+        return num1 + " * " + num2 + " = " + calculator.mul(num1,num2);
     }
 
     @GetMapping("/calculator/divide")
     public String div(@RequestParam int num1, @RequestParam int num2){
-        String result = "Неверные параметры";
-        if(!calculator.checkDivByZero(num2)){
-            result = Integer.toString(calculator.div(num1, num2));
+        double result = calculator.div(num1, num2);
+        if(result == 0){
+           return "На ноль делить нельзя";
         }
-        return result;
+        return num1 + " / " + num2 + " = " + result;
     }
 
 
